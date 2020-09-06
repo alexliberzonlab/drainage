@@ -183,18 +183,13 @@ for path in sorted(res_path.rglob('*.txt')):
 
 
 ```python
-res_list
-```
-
-```python
 for i,f in enumerate(res_list):
     fig,ax = plt.subplots(figsize=(12,12))
-    print(f, i)
     tools.display_vector_field(f, on_img=True, 
                            image_name = image_path / file_list[i], 
                            scaling_factor=1, 
                            scale=30, width=0.002,ax=ax,widim=True)
-    # fig.savefig(f'double_pulse_{i}.png',dpi=150)
+    fig.savefig(f'{str(f)[:-4]}.png',dpi=150)
 
 # settings.frame_pattern_a = f1
 # settings.frame_pattern_b = f2
@@ -213,5 +208,5 @@ for i,f in enumerate(res_list):
 ```
 
 ```python
-# !cat double_pulse_*.png | ffmpeg -framerate 5 -f image2pipe -i - -c:v copy double_pulse_openpiv.mkv
+
 ```
