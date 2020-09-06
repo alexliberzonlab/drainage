@@ -34,7 +34,7 @@ import pathlib
 
 ```python
 
-image_path = pathlib.Path(r'./data/')
+image_path = pathlib.Path(r'./test/')
 
 file_list = []
 for path in sorted(image_path.rglob('*.bmp')):
